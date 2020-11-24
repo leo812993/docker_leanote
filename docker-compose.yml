@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+
+
+          go:
+            #image: leo812993/centos_nginx:v2.1
+            #volumes:
+              #- "/Users/leo/Documents/works/webdata/www:/data/www"
+              #- "/Users/leo/Documents/works/webdata/host:/usr/local/nginx/conf/vhost"
+              #- "/Users/leo/Documents/works/webdata/letsencrypt:/etc/letsencrypt"
+            container_name: leanote
+            environment:
+                WEB_HTTPS: "ON"
+               
+            build: 
+              context: .
+              args:
+                buildno: 1
+            ports: 
+              - "80:80"
+              - "443:443"
+
+            restart: always
+
+            privileged: true
+
+          
+
+
