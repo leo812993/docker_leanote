@@ -1,6 +1,4 @@
 #!/bin/bash
-
-echo 'Hello World！'
 source /root/.bashrc
-touch ddd
+mongod --dbpath /home/root/data &
 tail -f /start.sh

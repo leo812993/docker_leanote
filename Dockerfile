@@ -17,10 +17,16 @@ RUN rm -rf /home/root/leanote-all-master
 RUN chmod -R 777 /home/root/go
 RUN source /root/.bashrc
 RUN source /root/.bashrc && go install github.com/revel/cmd/revel
+COPY mongodb-linux-x86_64-3.0.1.tgz /home/root/
+RUN cd /home/root && tar -zxvf  /home/root/mongodb-linux-x86_64-3.0.1.tgz
+RUN rm /home/root/mongodb-linux-x86_64-3.0.1.tgz
+RUN echo "export PATH=$PATH:/home/root/mongodb-linux-x86_64-3.0.1/bin" >> /root/.bashrc
+RUN source /root/.bashrc
+RUN mkdir /home/root/data
 COPY ./start.sh /
 RUN chmod +x /start.sh
 #ENTRYPOINT ["sh","/start.sh"]
-CMD ["/start.sh"]
+CMD ["/bin/sh","/start.sh"]
 
 
 
