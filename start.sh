@@ -1,5 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-
-source /etc/profile
+echo 'Hello World！'
+source /root/.bashrc
 touch ddd
+tail -f /start.sh
