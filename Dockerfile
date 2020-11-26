@@ -19,8 +19,8 @@ RUN source /root/.bashrc
 RUN source /root/.bashrc && go install github.com/revel/cmd/revel
 COPY ./start.sh /
 RUN chmod +x /start.sh
-#ENTRYPOINT ["/start.sh"]
-CMD ["/bin/bash", "/start.sh"]
+#ENTRYPOINT ["sh","/start.sh"]
+CMD ["/start.sh"]
 
 
 

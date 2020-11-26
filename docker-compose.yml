@@ -10,8 +10,8 @@ services:
               #- "/Users/leo/Documents/works/webdata/host:/usr/local/nginx/conf/vhost"
               #- "/Users/leo/Documents/works/webdata/letsencrypt:/etc/letsencrypt"
             container_name: leanote
-            environment:
-                WEB_HTTPS: "ON"
+            #environment:
+            #    WEB_HTTPS: "ON"
                
             build: 
               context: .
