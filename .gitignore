@@ -1,3 +1,5 @@
 *.gz
 *.tgz
 *.zip
+data/
+gopackage/

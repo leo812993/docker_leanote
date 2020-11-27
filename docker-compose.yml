@@ -5,9 +5,9 @@ services:
 
           go:
             #image: leo812993/centos_nginx:v2.1
-            #volumes:
-              #- "/Users/leo/Documents/works/webdata/www:/data/www"
-              #- "/Users/leo/Documents/works/webdata/host:/usr/local/nginx/conf/vhost"
+            volumes:
+              - "/Users/leo/Documents/works/DockerLeanote/gopackage:/home/root/gopackage"
+              - "/Users/leo/Documents/works/DockerLeanote/data:/home/root/data"
               #- "/Users/leo/Documents/works/webdata/letsencrypt:/etc/letsencrypt"
             container_name: leanote
             #environment:
