@@ -6,8 +6,8 @@ services:
           go:
             #image: leo812993/centos_nginx:v2.1
             volumes:
-              - "/Users/leo/Documents/works/DockerLeanote/gopackage:/home/root/gopackage"
-              - "/Users/leo/Documents/works/DockerLeanote/data:/home/root/data"
+              - "/home/leo/works/docker_leanote/gopackage:/home/root/gopackage"
+              - "/home/leo/works/docker_leanote/data:/home/root/data"
               #- "/Users/leo/Documents/works/webdata/letsencrypt:/etc/letsencrypt"
             container_name: leanote
             #environment:
@@ -17,8 +17,8 @@ services:
               context: .
               args:
                 buildno: 1
-                  #ports: 
-                  #- "80:80"
+                ports: 
+                   "9000:9000"
                   #- "443:443"
 
             restart: always
