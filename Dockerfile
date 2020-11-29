@@ -16,6 +16,8 @@ RUN source /root/.bashrc
 COPY ./start.sh /
 COPY ./create_db_user.js /
 RUN chmod +x /start.sh
+#Set port
+EXPOSE 9000
 #ENTRYPOINT ["sh","/start.sh"]
 CMD ["/bin/sh","/start.sh"]
 
