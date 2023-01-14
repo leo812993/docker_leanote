@@ -12,13 +12,17 @@ if [ ! -f /home/root/gopackage/installed.txt ]; then
  mongo leanote /create_db_user.js
  sleep 5
  ps -ef | grep "mongod" | grep -v grep | awk '{print $2}' |xargs kill -9
- mongod --dbpath /home/root/data --auth &
+ mongod --bind_ip 0.0.0.0 --port 27017  --dbpath /home/root/data --auth &
  echo "restart mongod"
 else
-  mongod --dbpath /home/root/data --auth &
+  mongod --bind_ip 0.0.0.0 --port 27017 --dbpath /home/root/data --auth &
 fi
 sleep 10
 revel run github.com/leanote/leanote
+
+
+
+
 
 
 
